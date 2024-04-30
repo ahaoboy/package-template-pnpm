@@ -93,6 +93,11 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
+        return require('./package-template.win32-x64-gnu.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
         return require('@napi-rs/package-template-pnpm-win32-x64-msvc')
       } catch (e) {
         loadErrors.push(e)
@@ -127,15 +132,15 @@ function requireNative() {
     }
   } else if (process.platform === 'darwin') {
     try {
-        return require('./package-template.darwin-universal.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-darwin-universal')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+      return require('./package-template.darwin-universal.node')
+    } catch (e) {
+      loadErrors.push(e)
+    }
+    try {
+      return require('@napi-rs/package-template-pnpm-darwin-universal')
+    } catch (e) {
+      loadErrors.push(e)
+    }
 
     if (process.arch === 'x64') {
       try {
@@ -196,105 +201,105 @@ function requireNative() {
     if (process.arch === 'x64') {
       if (isMusl()) {
         try {
-        return require('./package-template.linux-x64-musl.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-x64-musl')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-x64-musl.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-x64-musl')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       } else {
         try {
-        return require('./package-template.linux-x64-gnu.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-x64-gnu')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-x64-gnu.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-x64-gnu')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       }
     } else if (process.arch === 'arm64') {
       if (isMusl()) {
         try {
-        return require('./package-template.linux-arm64-musl.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-arm64-musl')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-arm64-musl.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-arm64-musl')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       } else {
         try {
-        return require('./package-template.linux-arm64-gnu.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-arm64-gnu')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-arm64-gnu.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-arm64-gnu')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       }
     } else if (process.arch === 'arm') {
       if (isMusl()) {
         try {
-        return require('./package-template.linux-arm-musleabihf.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-arm-musleabihf')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-arm-musleabihf.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-arm-musleabihf')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       } else {
         try {
-        return require('./package-template.linux-arm-gnueabihf.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-arm-gnueabihf')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-arm-gnueabihf.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-arm-gnueabihf')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       }
     } else if (process.arch === 'riscv64') {
       if (isMusl()) {
         try {
-        return require('./package-template.linux-riscv64-musl.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-riscv64-musl')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-riscv64-musl.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-riscv64-musl')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       } else {
         try {
-        return require('./package-template.linux-riscv64-gnu.node')
-      } catch (e) {
-        loadErrors.push(e)
-      }
-      try {
-        return require('@napi-rs/package-template-pnpm-linux-riscv64-gnu')
-      } catch (e) {
-        loadErrors.push(e)
-      }
+          return require('./package-template.linux-riscv64-gnu.node')
+        } catch (e) {
+          loadErrors.push(e)
+        }
+        try {
+          return require('@napi-rs/package-template-pnpm-linux-riscv64-gnu')
+        } catch (e) {
+          loadErrors.push(e)
+        }
 
       }
     } else if (process.arch === 'ppc64') {
